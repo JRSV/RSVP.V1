@@ -1,6 +1,0 @@
-#N canvas 190 193 719 432 10;
-#X obj 117 109 tgl_pre gop 1;
-#X obj 147 109 tgl_pre gop 2;
-#X obj 117 131 tgl_pre gop 3;
-#X obj 147 131 tgl_pre gop 4;
-#X coords 0 -1 1 1 85 60 2 100 100;
