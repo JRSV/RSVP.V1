@@ -1,0 +1,35 @@
+#N canvas 1006 328 568 477 10;
+#X declare -lib zexy;
+#X declare -lib cyclone;
+#X declare -lib iemguts;
+#X declare -lib hcs;
+#X declare -lib iemlib;
+#X obj 45 76 int_nbx;
+#X obj -1 2 cnv 15 552 40 empty empty int_nbx 3 12 0 18 -204280 -1
+0;
+#X text 11 25 unique nbx that sets the interpolation time between presets
+;
+#X obj 0 391 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
+0;
+#X obj 0 439 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+0;
+#N canvas 307 431 428 109 Related_objects 0;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 6 1 Related Objects;
+#X restore 207 441 pd Related_objects;
+#X text 107 339 place the library in the folder of your project \,
+as it will create unique files;
+#X obj -1 312 cnv 3 550 3 empty empty INSTALLATION 8 12 0 13 -228856
+-1 0;
+#N canvas 0 23 450 300 dependencies 0;
+#X obj 106 74 declare -lib zexy;
+#X obj 106 94 declare -lib cyclone;
+#X obj 106 114 declare -lib iemguts;
+#X obj 106 134 declare -lib hcs;
+#X obj 106 154 declare -lib iemlib;
+#X restore 324 361 pd dependencies;
+#X text 108 409 Creation argument comes via the [PresetManager];
+#X text 100 162 this unique nbx sets the interpolation time between
+presets and does not have interpolation capabilities itself so it updates
+time immidiately;
+#X coords 0 477 1 476 54 28 0;

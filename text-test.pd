@@ -1,0 +1,6 @@
+#N canvas 135 52 777 605 10;
+#X obj 137 84 GUI-creator test;
+#X obj 80 300 tgl_pre test 1;
+#X obj 110 300 tgl_pre test 2;
+#X obj 140 300 tgl_pre test 3;
+#X obj 170 300 tgl_pre test 4;

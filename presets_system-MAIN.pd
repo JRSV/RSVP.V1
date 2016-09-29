@@ -1,0 +1,10 @@
+#N canvas 249 47 687 638 10;
+#X obj 116 207 GOP-test a;
+#X obj 115 274 GOP-test b;
+#X obj 211 207 GOP-test testing;
+#X obj 210 275 GOP-test;
+#X text 61 375 example to demontrate the usage of the system in various
+instances of the same abstraction with grah-on-parent. Each instance
+has an argument that is passed to the GUIs to create uniqueness for
+each instance;
+#X obj 95 76 PresetManager GOP;
