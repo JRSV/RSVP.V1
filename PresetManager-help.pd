@@ -28,4 +28,5 @@ as it will create unique files;
 #X restore 324 527 pd dependencies;
 #X text 108 575 A unique ID that names the ".txt" file in which the
 presets are recorded.;
+#X obj 6 52 PresetManager help;
 #X coords 0 644 1 643 250 85 0;
