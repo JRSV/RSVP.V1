@@ -74,14 +74,14 @@
 #X obj 343 507 declare -stdlib iemlib/iemlib2;
 #X obj 343 468 declare -lib cyclone;
 #X obj 343 487 declare -lib flatgui/knob;
-#X obj 85 356 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 3.96527e+007
-3.96527e+007 3.96527e+007 0 1;
+#X obj 85 356 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 3.96527e+07
+3.96527e+07 3.96527e+07 0 1;
 #X obj 287 118 cyclone/sprintf knb-%s-%s-%d;
-#X obj 369 76 iemguts/canvasargs 1;
 #X obj 287 57 t b b b;
 #X obj 65 20 t b b;
+#X obj 369 76 GetParent;
 #X connect 2 0 21 0;
-#X connect 3 0 37 0;
+#X connect 3 0 36 0;
 #X connect 5 0 8 0;
 #X connect 6 0 27 0;
 #X connect 7 0 4 0;
@@ -107,15 +107,15 @@
 #X connect 27 0 22 0;
 #X connect 28 0 33 0;
 #X connect 29 0 28 0;
-#X connect 29 0 36 0;
+#X connect 29 0 35 0;
 #X connect 33 0 2 1;
 #X connect 33 0 9 0;
 #X connect 34 0 11 0;
 #X connect 34 0 13 0;
-#X connect 35 0 34 1;
-#X connect 36 0 15 0;
-#X connect 36 1 35 0;
-#X connect 36 2 14 0;
-#X connect 37 0 2 0;
-#X connect 37 1 29 0;
+#X connect 35 0 15 0;
+#X connect 35 1 37 0;
+#X connect 35 2 14 0;
+#X connect 36 0 2 0;
+#X connect 36 1 29 0;
+#X connect 37 0 34 1;
 #X coords 0 -1 1 1 42 45 2 80 350;
