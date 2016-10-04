@@ -1,18 +1,18 @@
-#N canvas 145 22 1150 695 10;
+#N canvas 139 85 1150 695 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -stdlib iemlib/iemlib1;
 #X declare -stdlib zexy;
 #X obj 500 100 cnv 15 250 85 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName \\\$1-presets.txt
+#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName brkp-test-presets.txt
 10 65 0 14 -228856 -66577 0;
-#X obj 555 304 s \$0-updateInterTime;
+#X obj 562 304 s \$0-updateInterTime;
 #X obj 679 208 s PreInterpTime;
 #X obj 679 68 r \$0-updateInterTime;
-#X obj 673 144 cnv 15 65 15 empty \$0-prenumber NO_PRESET 2 8 0 10
--258699 -33289 0;
+#X obj 673 144 cnv 15 65 15 empty \$0-prenumber pre_numb-3 2 8 0 10
+-233017 -33289 0;
 #X obj 679 114 int_nbx \$1;
-#N canvas 294 141 623 390 Premanager-STORE 0;
+#N canvas 288 149 623 390 Premanager-STORE 1;
 #X obj 101 101 cnv 15 148 18 empty \$0-store_blink_color empty 20 12
 0 14 -228992 -262144 0;
 #X floatatom 120 103 5 0 500 0 - - -, f 5;
@@ -36,8 +36,8 @@
 #X obj 415 135 t b b;
 #X obj 415 166 del 200;
 #X obj 119 242 clip 0 500;
-#X obj 119 304 send PRE-MANAGER-update-number_STORE-\$1;
-#X obj 120 64 receive PRE-MANAGER-update-number_STORE-\$1;
+#X obj 120 62 receive PRE-MANAGER-update-number_STORE;
+#X obj 119 304 send PRE-MANAGER-update-number_STORE;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
 #X connect 2 0 7 0;
@@ -59,11 +59,11 @@
 #X connect 16 1 15 0;
 #X connect 17 0 14 0;
 #X connect 18 0 11 1;
-#X connect 18 0 19 0;
-#X connect 20 0 1 0;
+#X connect 18 0 20 0;
+#X connect 19 0 1 0;
 #X coords 0 -1 1 1 150 20 2 100 100;
 #X restore 516 139 pd Premanager-STORE;
-#N canvas 474 50 623 390 Premanager-ReCALL 0;
+#N canvas 471 81 623 390 Premanager-ReCALL 0;
 #X obj 101 101 cnv 15 148 18 empty \$0-recall_blink_color empty 20
 12 0 14 -262131 -262144 0;
 #X floatatom 120 103 5 0 500 0 - - -, f 5;
@@ -206,11 +206,11 @@ updating the file in disk;
 #X connect 25 0 18 0;
 #X connect 26 0 4 0;
 #X connect 27 0 4 0;
-#X restore 66 333 pd open_save-file;
-#X obj 277 418 cyclone/prepend;
-#X obj 277 255 r to_Master_preset;
-#X msg 277 300 add2 \$1;
-#X obj 277 278 cyclone/tosymbol;
+#X restore 85 333 pd open_save-file;
+#X obj 258 418 cyclone/prepend;
+#X obj 258 308 r to_Master_preset;
+#X msg 258 353 add2 \$1;
+#X obj 258 331 cyclone/tosymbol;
 #N canvas 67 118 743 679 empty_message 0;
 #X obj 89 15 inlet;
 #X obj 68 622 outlet;
@@ -258,8 +258,8 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 15 0 9 0;
 #X connect 17 1 6 1;
 #X connect 17 2 14 1;
-#X restore 277 320 pd empty_message;
-#X obj 400 265 s SaveMaster;
+#X restore 258 373 pd empty_message;
+#X obj 382 265 s SaveMaster;
 #N canvas 94 174 450 300 count_items 0;
 #X obj 108 46 r preAbsCount;
 #X obj 108 71 bang;
@@ -292,7 +292,7 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 13 0 12 0;
 #X connect 13 1 4 0;
 #X connect 13 2 11 0;
-#X restore 419 241 pd count_items;
+#X restore 405 241 pd count_items;
 #N canvas 81 232 552 423 current_preset_label 0;
 #X obj 129 212 spigot;
 #X obj 129 139 t a a;
@@ -308,7 +308,7 @@ of the GUI's are collected. This list is saved into the COLL object
 #X obj 190 23 inlet;
 #X msg 209 227 NO_PRESET;
 #X obj 129 86 i;
-#X obj 171 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 171 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 162 160 ==;
 #X obj 129 41 t b f;
@@ -336,8 +336,8 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 16 1 13 1;
 #X connect 17 0 13 0;
 #X connect 17 1 15 1;
-#X restore 398 537 pd current_preset_label;
-#X obj 353 616 s CallBack-Master;
+#X restore 381 537 pd current_preset_label;
+#X obj 329 616 s CallBack-Master;
 #N canvas 50 312 470 341 drip_pairs 0;
 #X obj 94 18 inlet;
 #X obj 94 281 outlet;
@@ -410,21 +410,21 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 8 0 1 0;
 #X connect 9 0 7 0;
 #X connect 10 0 9 0;
-#X restore 353 564 pd drip_pairs;
-#X obj 277 382 route list;
+#X restore 329 564 pd drip_pairs;
+#X obj 258 397 route list;
 #X obj 516 279 t f f b;
 #X msg 83 471 open;
-#X msg 439 301 store \$1;
-#X obj 400 199 t b b a;
+#X msg 428 301 store \$1;
+#X obj 382 199 t b b a;
 #X text 59 70 needs only one argument that will use to create the .txt
 file which will store all the presets \; \; the name of the file can't
 be "0.txt" so the argument cannot be "0".;
 #X obj 870 129 declare -stdlib iemlib/iemlib2;
 #X obj 870 109 declare -stdlib iemlib/iemlib1;
 #X obj 870 89 declare -stdlib zexy;
-#X obj 66 311 init;
+#X obj 85 311 init;
 #X obj 581 464 init;
-#X obj 353 508 cyclone/coll \$1-presets;
+#X obj 329 508 cyclone/coll \$1-presets;
 #C restore;
 #X msg 581 491 flags 0 0;
 #X connect 4 0 6 0;
