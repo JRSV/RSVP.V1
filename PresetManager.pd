@@ -1,10 +1,10 @@
-#N canvas 184 50 1150 695 10;
+#N canvas 145 22 1150 695 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -stdlib iemlib/iemlib1;
 #X declare -stdlib zexy;
 #X obj 500 100 cnv 15 250 85 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName interp-presets.txt
+#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName \\\$1-presets.txt
 10 65 0 14 -228856 -66577 0;
 #X obj 555 304 s \$0-updateInterTime;
 #X obj 679 208 s PreInterpTime;
@@ -87,8 +87,8 @@
 #X msg 476 198 color 14;
 #X obj 415 235 s \$0-recall_blink_color;
 #X obj 119 270 clip 0 500;
-#X obj 119 346 send PRE-MANAGER-update-number_ReCALL-\$1;
-#X obj 120 64 receive PRE-MANAGER-update-number_ReCALL-\$1;
+#X obj 119 346 send PRE-MANAGER-update-number_ReCALL;
+#X obj 120 64 receive PRE-MANAGER-update-number_ReCALL;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
 #X connect 2 0 7 0;
@@ -117,7 +117,7 @@
 #X obj 667 165 bng 12 250 50 0 \$0-printallpresets empty EDIT/PRSTS
 15 5 0 9 -204786 -159808 -1;
 #X obj 83 448 r \$0-printallpresets;
-#N canvas 320 67 792 591 open_save-file 1;
+#N canvas 320 67 792 591 open_save-file 0;
 #X obj 172 16 inlet;
 #X obj 417 209 prepend label;
 #X obj 417 230 s \$0-PreManager-presetName;
