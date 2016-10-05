@@ -19,6 +19,10 @@ additional copyrights:
 	This subpatch [pd sim-route] is marked inside the program where 
 	it is used and full credit goes to Thomas Grill 
 	(http://grrrr.org/) and	I wish to thank him for it. 
+	
+	There is a subpatch in [PresetManager] called [pd drip_pairs],
+	here I used the [list-abs] abstraction [list-drip] but included
+	it as a subpatch. This is clearly labeled in [PresetManager].
 _______________________________________________________________________
 
 
