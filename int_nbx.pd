@@ -71,6 +71,10 @@
 #X obj 658 134 iemguts/canvasargs 1;
 #X obj 568 154 sprintf %s-%s;
 #X obj 340 83 t b b b;
+#X text 554 288 www.jrsv.net;
+#X text 513 275 released under GPL license;
+#X text 527 303 Edinburgh - Scotland;
+#X text 513 260 (c) J.Rafael Subia V. 2016;
 #X connect 0 0 14 0;
 #X connect 1 0 13 0;
 #X connect 2 0 5 0;

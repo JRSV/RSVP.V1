@@ -1,4 +1,4 @@
-#N canvas 47 116 606 657 10;
+#N canvas 80 22 606 657 10;
 #X declare -lib cyclone;
 #X declare -stdlib zexy/zexy;
 #X declare -lib iemguts;
@@ -77,6 +77,10 @@
 #X obj 444 236 iemguts/canvasargs 1;
 #X obj 369 195 t b b;
 #X obj 369 256 sprintf %s-%s;
+#X text 433 52 www.jrsv.net;
+#X text 392 39 released under GPL license;
+#X text 406 67 Edinburgh - Scotland;
+#X text 392 24 (c) J.Rafael Subia V. 2016;
 #X connect 1 0 2 1;
 #X connect 1 0 10 0;
 #X connect 2 0 20 0;

@@ -8,7 +8,7 @@
 #X obj 282 183 + 1;
 #X obj 574 369 symbol;
 #X msg 270 155 0;
-#N canvas 602 196 692 514 read_number_memory 1;
+#N canvas 602 196 692 514 read_number_memory 0;
 #X obj 227 335 expr if($f1 > $f2 \, $f1 \, $f2);
 #X text 415 336 <- like cyclone/peak;
 #X obj 528 212 inlet;
@@ -96,6 +96,10 @@
 -1;
 #X text 470 39 1st argument prefix of object to create \; 2nd argument
 unique ID from parent \; 3rd order number (do not change);
+#X text 72 419 www.jrsv.net;
+#X text 31 406 released under GPL license;
+#X text 45 434 Edinburgh - Scotland;
+#X text 31 391 (c) J.Rafael Subia V. 2016;
 #X connect 1 0 2 0;
 #X connect 1 0 5 1;
 #X connect 1 0 14 2;

@@ -1,10 +1,10 @@
-#N canvas 139 85 1150 695 10;
+#N canvas 17 22 1150 695 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -stdlib iemlib/iemlib1;
 #X declare -stdlib zexy;
 #X obj 500 100 cnv 15 250 85 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName brkp-test-presets.txt
+#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName \\\$1-presets.txt
 10 65 0 14 -228856 -66577 0;
 #X obj 562 304 s \$0-updateInterTime;
 #X obj 679 208 s PreInterpTime;
@@ -12,7 +12,7 @@
 #X obj 673 144 cnv 15 65 15 empty \$0-prenumber pre_numb-3 2 8 0 10
 -233017 -33289 0;
 #X obj 679 114 int_nbx \$1;
-#N canvas 288 149 623 390 Premanager-STORE 1;
+#N canvas 288 149 623 390 Premanager-STORE 0;
 #X obj 101 101 cnv 15 148 18 empty \$0-store_blink_color empty 20 12
 0 14 -228992 -262144 0;
 #X floatatom 120 103 5 0 500 0 - - -, f 5;
@@ -308,7 +308,7 @@ of the GUI's are collected. This list is saved into the COLL object
 #X obj 190 23 inlet;
 #X msg 209 227 NO_PRESET;
 #X obj 129 86 i;
-#X obj 171 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 171 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 162 160 ==;
 #X obj 129 41 t b f;
@@ -427,6 +427,10 @@ be "0.txt" so the argument cannot be "0".;
 #X obj 329 508 cyclone/coll \$1-presets;
 #C restore;
 #X msg 581 491 flags 0 0;
+#X text 755 594 www.jrsv.net;
+#X text 714 581 released under GPL license;
+#X text 728 609 Edinburgh - Scotland;
+#X text 714 566 (c) J.Rafael Subia V. 2016;
 #X connect 4 0 6 0;
 #X connect 6 0 3 0;
 #X connect 7 0 26 0;

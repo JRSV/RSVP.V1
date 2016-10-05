@@ -1,4 +1,4 @@
-#N canvas 156 50 765 648 10;
+#N canvas 156 50 697 630 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -lib cyclone;
 #X declare -lib flatgui/knob;
@@ -71,17 +71,21 @@
 #X obj 82 286 pipe 10;
 #X msg 187 347 color 12 12 12;
 #X obj 287 37 init;
-#X obj 343 557 declare -stdlib iemlib/iemlib2;
-#X obj 343 518 declare -lib cyclone;
-#X obj 343 537 declare -lib flatgui/knob;
-#X obj 85 406 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 3.57055e+07
-3.57055e+07 3.57055e+07 0 1;
+#X obj 455 278 declare -stdlib iemlib/iemlib2;
+#X obj 455 239 declare -lib cyclone;
+#X obj 455 258 declare -lib flatgui/knob;
+#X obj 85 406 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 2.46606e+06
+2.46606e+06 2.46606e+06 0 1;
 #X obj 287 168 cyclone/sprintf knb-%s-%s-%d;
 #X obj 65 20 t b b;
 #X obj 369 85 iemguts/canvasname 1;
 #X obj 444 105 iemguts/canvasargs 1;
 #X obj 369 125 sprintf %s-%s;
 #X obj 287 57 t b b b b;
+#X text 437 528 www.jrsv.net;
+#X text 396 515 released under GPL license;
+#X text 410 543 Edinburgh - Scotland;
+#X text 396 500 (c) J.Rafael Subia V. 2016;
 #X connect 2 0 21 0;
 #X connect 3 0 35 0;
 #X connect 5 0 8 0;

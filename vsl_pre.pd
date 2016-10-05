@@ -1,4 +1,4 @@
-#N canvas 375 50 765 648 10;
+#N canvas 375 50 583 640 10;
 #X declare -lib cyclone;
 #X declare -stdlib zexy/zexy;
 #X declare -lib iemguts;
@@ -64,17 +64,17 @@
 #X msg 36 182 0;
 #X obj 65 536 t a b;
 #X obj 80 307 pack;
-#X obj 428 493 send preAbsCount;
-#X obj 428 472 iemguts/canvasindex;
-#X obj 428 447 loadbang;
-#X obj 415 425 r update_abs_count;
+#X obj 412 336 send preAbsCount;
+#X obj 412 315 iemguts/canvasindex;
+#X obj 412 290 loadbang;
+#X obj 399 268 r update_abs_count;
 #X obj 80 280 pipe 10;
 #X obj 83 355 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -191407
 -1 -1 0 1;
-#X obj 347 572 declare -lib cyclone;
-#X obj 347 534 declare -stdlib zexy/zexy;
-#X obj 347 591 declare -lib iemguts;
-#X obj 347 553 declare -stdlib iemlib/iemlib2;
+#X obj 331 415 declare -lib cyclone;
+#X obj 331 377 declare -stdlib zexy/zexy;
+#X obj 331 434 declare -lib iemguts;
+#X obj 331 396 declare -stdlib iemlib/iemlib2;
 #X obj 287 38 init;
 #X obj 287 166 cyclone/sprintf vsl-%s-%s-%d;
 #X obj 65 21 t b b;
@@ -82,6 +82,10 @@
 #X obj 444 106 iemguts/canvasargs 1;
 #X obj 369 126 sprintf %s-%s;
 #X obj 287 58 t b b b b;
+#X text 348 550 www.jrsv.net;
+#X text 307 537 released under GPL license;
+#X text 321 565 Edinburgh - Scotland;
+#X text 307 522 (c) J.Rafael Subia V. 2016;
 #X connect 1 0 20 0;
 #X connect 2 0 34 0;
 #X connect 4 0 7 0;

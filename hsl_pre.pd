@@ -1,4 +1,4 @@
-#N canvas 287 43 765 648 10;
+#N canvas 287 43 673 641 10;
 #X declare -stdlib iemlib/iemlib2;
 #X obj 80 400 cnv 15 139 21 empty empty empty 20 12 0 14 -1 -66577
 0;
@@ -68,7 +68,7 @@
 #X obj 80 308 pipe 10;
 #X obj 86 403 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -216373
 -1 -1 0 1;
-#X obj 396 477 declare -stdlib iemlib/iemlib2;
+#X obj 362 438 declare -stdlib iemlib/iemlib2;
 #X obj 287 37 init;
 #X obj 287 176 cyclone/sprintf hsl-%s-%s-%d;
 #X obj 65 20 t b b;
@@ -76,6 +76,10 @@
 #X obj 444 126 iemguts/canvasargs 1;
 #X obj 369 146 sprintf %s-%s;
 #X obj 287 58 t b b b b;
+#X text 319 533 www.jrsv.net;
+#X text 278 520 released under GPL license;
+#X text 292 548 Edinburgh - Scotland;
+#X text 278 505 (c) J.Rafael Subia V. 2016;
 #X connect 1 0 20 0;
 #X connect 2 0 31 0;
 #X connect 4 0 7 0;
