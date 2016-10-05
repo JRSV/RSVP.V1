@@ -22,7 +22,8 @@ additional copyrights:
 	
 	There is a subpatch in [PresetManager] called [pd drip_pairs],
 	here I used the [list-abs] abstraction [list-drip] but included
-	it as a subpatch. This is clearly labeled in [PresetManager].
+	it as a subpatch. This is clearly labeled in [PresetManager]
+	and copyright goes to Mathieu Bouchard.
 _______________________________________________________________________
 
 
