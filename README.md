@@ -1,7 +1,9 @@
-# JRSV_Presets
+# RSVP [Répondez S’il Vous Plaît - (R)afael (S)ubía (V)aldez (P)resets] 
 State Saving System for Pure Data
 
-JRSV_presets is a state saving system for Pure  Data (http://puredata.info/). It was created to offer Pure Data users a way to record presets for the GUI objects inside patches.
+RSVP is a state saving system for Pure  Data (http://puredata.info/). It was created to offer Pure Data users a way to record presets for the GUI objects inside patches.
+
+RSVP stands for two things Répondez S’il Vous Plaît and my initials Rafael Subía Valdez Presets. The concept of RSVP in an invitation is to confirm assistance to an event, so this translated to the preset system is that that space and time is reserved for a certain value, it is "reserved".
 
 ## Getting Started
 
@@ -25,7 +27,7 @@ for more information and video tutorials from YOUTUBE please visit:
 
 ### Prerequisities
 
-JRSV_presets depends on the following libraries available through the "DEKEN" package manager inside PD (comes with vanilla 0.47-1 or can be installed separetly). Make sure to download and install each package .  Set the path to the libraries in PD preferences and if necessary load/declare the libraries
+RSVP depends on the following libraries available through the "DEKEN" package manager inside PD (comes with vanilla 0.47-1 or can be installed separetly). Make sure to download and install each package .  Set the path to the libraries in PD preferences and if necessary load/declare the libraries
 
   - HCS
   - iemguts
@@ -41,7 +43,7 @@ José Rafael Subía Valdez (www.jrsv.net)
 
 ### License
 
-This Project is released under GPL version 3 license agreement. More details available in the https://raw.githubusercontent.com/JRSV/JRSV_Presets-0.1/master/LICENSE.txt file
+This Project is released under GPL version 3 license agreement. More details available in the readme file
 
 ### Acknowledgments
 
