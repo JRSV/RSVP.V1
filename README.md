@@ -47,7 +47,7 @@ This Project is released under GPL version 3 license agreement. More details ava
 
 ### Acknowledgments
 
-I would like too thank all the PD community that activily participate in the different gathering points of information (LIST and FACEBOOK) specially to the following  people that helped me with ideas and solutions to the problems:
+I would like to thank all the PD community that activily participate in the different gathering points of information (LIST and FACEBOOK) specially to the following  people that helped me with ideas and solutions to the problems:
 
    - Matt Barber
    - Liam Goodacre
