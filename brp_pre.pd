@@ -1,10 +1,10 @@
-#N canvas 49 22 1158 695 10;
+#N canvas 973 236 1158 695 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -stdlib iemlib/iemlib1;
 #X declare -lib tof/breakpoints;
 #X declare -lib cyclone;
 #X declare -stdlib zexy;
-#X obj 81 351 cnv 15 204 128 empty empty empty 20 12 0 14 -1 -66577
+#X obj 84 467 cnv 10 198 11 empty empty empty 20 12 0 14 -1 -66577
 0;
 #X obj 367 4 r SaveMaster;
 #X obj 367 378 s to_Master_preset;
@@ -54,23 +54,23 @@
 #X obj 592 191 cyclone/prepend symbol;
 #X obj 785 147 i \$2;
 #X obj 592 115 symbol \$1;
-#X obj 85 265 inlet;
+#X obj 42 118 inlet;
 #X obj 367 23 t b b;
 #X obj 367 298 t a b;
 #X obj 1012 105 send preAbsCount;
 #X obj 1012 84 iemguts/canvasindex;
 #X obj 1012 59 loadbang;
 #X obj 999 37 r update_abs_count;
-#X obj 85 484 outlet;
-#X obj 179 486 outlet;
-#X obj 274 483 outlet;
+#X obj 85 493 outlet;
+#X obj 179 495 outlet;
+#X obj 274 492 outlet;
 #X msg 205 319 dump;
-#X msg 17 236 0 50 1 50 0;
-#X obj 84 468 bng 9 250 50 0 \$0-send-reset-brp empty RESET 11 5 0
+#X msg 44 239 0 50 1 50 0;
+#X obj 87 467 bng 9 250 50 0 \$0-send-reset-brp empty RESET 11 5 0
 9 -4032 -258113 -228856;
-#X obj 17 214 r \$0-send-reset-brp;
+#X obj 17 194 r \$0-send-reset-brp;
 #X obj 385 250 nbx 3 11 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--191407 -1 -1 0 256;
+-191407 -1 -1 1 256;
 #X obj 640 549 cyclone/coll;
 #C restore;
 #X msg 762 451 store \$1;
@@ -177,7 +177,7 @@ updating the file in disk;
 #X obj 87 357 breakpoints 190 105;
 #X obj 178 614 s \$0-env_2_store;
 #X obj 741 403 r \$0-env_2_store;
-#X obj 178 467 nbx 5 10 10 1e+37 0 0 empty \$0-BRP-DUR_PresetCallback
+#X obj 175 467 nbx 5 10 10 1e+37 0 0 empty \$0-BRP-DUR_PresetCallback
 DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X msg 178 538 duration \$1;
 #X obj 178 591 list append;
@@ -195,10 +195,10 @@ DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X obj 696 358 int;
 #X obj 696 379 t b b f b;
 #X obj 367 273 int;
-#X obj 133 468 bng 9 250 50 0 empty empty ENVS 11 5 0 9 -4032 -258113
+#X obj 136 467 bng 9 250 50 0 empty empty ENVS 11 5 0 9 -4032 -258113
 -228856;
-#X msg 133 516 open;
-#X obj 110 564 s \$0-op;
+#X msg 138 512 open;
+#X obj 138 564 s \$0-op;
 #X obj 740 532 r \$0-op;
 #X obj 640 354 i;
 #X text 836 657 <- duration GUI;
@@ -220,6 +220,8 @@ DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X text 76 63 released under GPL license;
 #X text 90 91 Edinburgh - Scotland;
 #X text 76 48 (c) J.Rafael Subia V. 2016;
+#X obj 17 215 t b b;
+#X obj 42 158 route bang dump duration;
 #X connect 1 0 12 0;
 #X connect 3 0 6 0;
 #X connect 4 0 25 0;
@@ -231,7 +233,7 @@ DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X connect 8 0 77 1;
 #X connect 9 0 66 2;
 #X connect 10 0 66 0;
-#X connect 11 0 48 0;
+#X connect 11 0 85 0;
 #X connect 12 0 57 0;
 #X connect 12 0 59 0;
 #X connect 12 1 35 0;
@@ -242,7 +244,7 @@ DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X connect 17 0 15 0;
 #X connect 21 0 40 0;
 #X connect 22 0 40 0;
-#X connect 24 0 22 0;
+#X connect 24 0 84 0;
 #X connect 25 0 59 1;
 #X connect 26 0 49 0;
 #X connect 27 0 28 1;
@@ -256,8 +258,10 @@ DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X connect 40 1 19 0;
 #X connect 40 1 47 0;
 #X connect 40 2 20 0;
+#X connect 40 2 21 0;
 #X connect 42 0 29 1;
 #X connect 43 0 44 0;
+#X connect 43 0 21 0;
 #X connect 44 0 45 0;
 #X connect 44 0 40 0;
 #X connect 45 0 41 0;
@@ -302,4 +306,9 @@ DURATION 55 6 0 10 -4032 -1 -258113 10 256;
 #X connect 77 0 78 0;
 #X connect 78 0 5 1;
 #X connect 79 0 25 0;
-#X coords 0 -1 1 1 206 130 2 80 350;
+#X connect 84 0 21 0;
+#X connect 84 1 22 0;
+#X connect 85 0 48 0;
+#X connect 85 1 21 0;
+#X connect 85 2 43 0;
+#X coords 0 -1 1 1 198 125 2 84 354;

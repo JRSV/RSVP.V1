@@ -1,9 +1,9 @@
-#N canvas 156 50 697 630 10;
+#N canvas 148 317 697 630 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -lib cyclone;
 #X declare -lib flatgui/knob;
-#X obj 80 400 cnv 15 42 45 empty empty empty 0 0 0 14 -1 -66577 0;
-#X obj 84 404 cnv 15 34 37 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 81 401 cnv 15 36 39 empty empty empty 0 0 0 14 -1 -66577 0;
+#X obj 82 402 cnv 15 34 37 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 65 478 int;
 #X obj 65 1 r SaveMaster;
@@ -74,8 +74,8 @@
 #X obj 455 278 declare -stdlib iemlib/iemlib2;
 #X obj 455 239 declare -lib cyclone;
 #X obj 455 258 declare -lib flatgui/knob;
-#X obj 85 406 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 2.46606e+06
-2.46606e+06 2.46606e+06 0 1;
+#X obj 83 404 knob 32 32 0 127 0 0 empty empty empty 0 -8 0 8 3.48026e+06
+3.48026e+06 3.48026e+06 0 1;
 #X obj 287 168 cyclone/sprintf knb-%s-%s-%d;
 #X obj 65 20 t b b;
 #X obj 369 85 iemguts/canvasname 1;
@@ -127,4 +127,4 @@
 #X connect 39 1 36 0;
 #X connect 39 2 37 0;
 #X connect 39 3 14 0;
-#X coords 0 -1 1 1 42 45 2 80 400;
+#X coords 0 -1 1 1 38 41 2 80 400;

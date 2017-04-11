@@ -1,7 +1,7 @@
 #N canvas 311 50 698 610 10;
 #X declare -lib cyclone;
 #X declare -stdlib iemlib/iemlib2;
-#X obj 80 400 cnv 15 59 18 empty empty empty 20 12 0 14 -1 -66577 0
+#X obj 80 400 cnv 15 56 16 empty empty empty 20 12 0 14 -1 -66577 0
 ;
 #X obj 65 478 int;
 #X obj 65 1 r SaveMaster;
@@ -51,12 +51,12 @@
 #X obj 136 476 outlet;
 #X text 194 230 <- credit to Thomas Grill. Thank You!!!;
 #X obj 287 289 prepend set;
-#X msg 152 521 nbx-0--0;
+#X msg 152 521 nbx-FM_dur-FM_synth-SNTH-1;
 #X obj 287 198 cyclone/prepend symbol;
 #X obj 452 151 i \$2;
 #X obj 287 83 symbol \$1;
-#X obj 82 402 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--191407 -1 -1 0 256;
+#X obj 81 401 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-191407 -1 -1 10000 256;
 #X obj 80 378 line;
 #X obj 153 256 r PreInterpTime;
 #X obj 9 146 inlet;
@@ -121,4 +121,4 @@
 #X connect 36 1 33 0;
 #X connect 36 2 34 0;
 #X connect 36 3 13 0;
-#X coords 0 -1 1 1 59 18 2 80 400;
+#X coords 0 -1 1 1 56 16 2 80 400;
