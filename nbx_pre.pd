@@ -56,7 +56,7 @@
 #X obj 452 151 i \$2;
 #X obj 287 83 symbol \$1;
 #X obj 81 401 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--191407 -1 -1 10000 256;
+-191407 -1 -1 0 256;
 #X obj 80 378 line;
 #X obj 153 256 r PreInterpTime;
 #X obj 9 146 inlet;
@@ -71,7 +71,6 @@
 #X obj 80 286 pipe 10;
 #X obj 497 254 declare -lib cyclone;
 #X obj 497 277 declare -stdlib iemlib/iemlib2;
-#X obj 287 37 init;
 #X obj 287 173 cyclone/sprintf nbx-%s-%s-%d;
 #X obj 65 20 t b b;
 #X obj 369 90 iemguts/canvasname 1;
@@ -82,8 +81,9 @@
 #X text 358 504 released under GPL license;
 #X text 372 532 Edinburgh - Scotland;
 #X text 358 489 (c) J.Rafael Subia V. 2016;
+#X obj 287 37 initbang;
 #X connect 1 0 21 0;
-#X connect 2 0 32 0;
+#X connect 2 0 31 0;
 #X connect 4 0 7 0;
 #X connect 5 0 27 0;
 #X connect 6 0 3 0;
@@ -92,8 +92,8 @@
 #X connect 10 0 11 0;
 #X connect 11 0 6 1;
 #X connect 12 0 5 1;
-#X connect 13 0 31 2;
-#X connect 14 0 31 0;
+#X connect 13 0 30 2;
+#X connect 14 0 30 0;
 #X connect 15 0 1 1;
 #X connect 15 0 8 0;
 #X connect 16 0 15 0;
@@ -109,16 +109,15 @@
 #X connect 25 0 24 0;
 #X connect 26 0 24 0;
 #X connect 27 0 22 0;
-#X connect 30 0 36 0;
-#X connect 31 0 10 0;
-#X connect 31 0 12 0;
-#X connect 32 0 1 0;
-#X connect 32 1 30 0;
-#X connect 33 0 35 0;
-#X connect 34 0 35 1;
-#X connect 35 0 31 1;
-#X connect 36 0 14 0;
-#X connect 36 1 33 0;
-#X connect 36 2 34 0;
-#X connect 36 3 13 0;
+#X connect 30 0 10 0;
+#X connect 30 0 12 0;
+#X connect 31 0 1 0;
+#X connect 32 0 34 0;
+#X connect 33 0 34 1;
+#X connect 34 0 30 1;
+#X connect 35 0 14 0;
+#X connect 35 1 32 0;
+#X connect 35 2 33 0;
+#X connect 35 3 13 0;
+#X connect 40 0 35 0;
 #X coords 0 -1 1 1 56 16 2 80 400;
