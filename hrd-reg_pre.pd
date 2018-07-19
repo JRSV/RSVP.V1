@@ -61,7 +61,7 @@
 #X obj 453 343 iemguts/canvasindex;
 #X obj 453 318 loadbang;
 #X obj 440 296 r update_abs_count;
-#X obj 81 351 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -191407 -1
+#X obj 81 351 hradio 10 1 0 4 empty empty empty 0 -8 0 10 -191407 -1
 -1 0;
 #X obj 290 37 initbang;
 #X obj 290 162 cyclone/sprintf hrd-%s-%s-%d;
@@ -109,4 +109,4 @@
 #X connect 31 1 28 0;
 #X connect 31 2 29 0;
 #X connect 31 3 12 0;
-#X coords 0 -1 1 1 122 17 2 80 350;
+#X coords 0 -1 1 1 42 12 2 80 350;

@@ -1,19 +1,19 @@
-#N canvas 429 273 1150 695 10;
+#N canvas 291 68 1150 695 10;
 #X declare -stdlib iemlib/iemlib2;
 #X declare -stdlib iemlib/iemlib1;
 #X declare -stdlib zexy;
 #X declare -stdlib iemguts;
-#X obj 500 100 cnv 15 250 85 empty empty empty 20 12 0 14 -33289 -66577
+#X obj 500 100 cnv 15 250 85 empty empty empty 20 12 0 14 -1 -66577
 0;
-#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName Audance-Guit-presets.txt
+#X obj 505 105 cnv 15 240 75 empty \$0-PreManager-presetName Harp-presets.txt
 10 65 0 14 -228856 -66577 0;
-#X obj 554 307 s \$0-updateInterTime;
+#X obj 567 334 s \$0-updateInterTime;
 #X obj 679 208 s PreInterpTime;
 #X obj 679 68 r \$0-updateInterTime;
-#X obj 673 144 cnv 15 65 15 empty \$0-prenumber pre_numb-0 2 8 0 10
+#X obj 673 144 cnv 15 65 15 empty \$0-prenumber pre_numb-3 2 8 0 10
 -233017 -33289 0;
 #X obj 679 114 int_nbx \$1;
-#N canvas 288 149 623 390 Premanager-STORE 0;
+#N canvas 278 141 623 390 Premanager-STORE 0;
 #X obj 101 101 cnv 15 148 18 empty \$0-store_blink_color empty 20 12
 0 14 -228992 -262144 0;
 #X floatatom 120 103 5 0 500 0 - - -, f 5;
@@ -30,7 +30,7 @@
 #X obj 190 102 bng 15 250 50 0 empty empty STORE 17 8 0 10 -261234
 -4160 -1;
 #X obj 190 273 i;
-#X obj 190 340 outlet;
+#X obj 190 356 outlet;
 #X obj 415 207 s \$0-store_blink_color;
 #X msg 415 185 color 38;
 #X msg 476 185 color 49;
@@ -38,7 +38,9 @@
 #X obj 415 166 del 200;
 #X obj 119 242 clip 0 500;
 #X obj 120 62 receive PRE-MANAGER-update-number_STORE;
-#X obj 119 304 send PRE-MANAGER-update-number_STORE;
+#X obj 119 320 send PRE-MANAGER-update-number_STORE;
+#X obj 190 143 t b b;
+#X obj 190 294 t a a;
 #X connect 1 0 4 1;
 #X connect 1 0 11 1;
 #X connect 2 0 7 0;
@@ -51,9 +53,9 @@
 #X connect 8 0 6 1;
 #X connect 9 0 4 0;
 #X connect 9 1 5 0;
-#X connect 10 0 11 0;
 #X connect 10 0 16 0;
-#X connect 11 0 12 0;
+#X connect 10 0 21 0;
+#X connect 11 0 22 0;
 #X connect 14 0 13 0;
 #X connect 15 0 13 0;
 #X connect 16 0 17 0;
@@ -62,6 +64,10 @@
 #X connect 18 0 11 1;
 #X connect 18 0 20 0;
 #X connect 19 0 1 0;
+#X connect 21 0 11 0;
+#X connect 21 1 1 0;
+#X connect 22 0 12 0;
+#X connect 22 1 20 0;
 #X coords 0 -1 1 1 150 20 2 100 100;
 #X restore 516 139 pd Premanager-STORE;
 #N canvas 152 117 623 390 Premanager-ReCALL 0;
@@ -125,17 +131,17 @@
 #X restore 516 112 pd Premanager-ReCALL;
 #X obj 667 165 bng 12 250 50 0 \$0-printallpresets empty EDIT/PRSTS
 15 5 0 9 -204786 -159808 -1;
-#X obj 83 448 r \$0-printallpresets;
-#N canvas 320 67 792 591 open_save-file 0;
+#X obj 82 428 r \$0-printallpresets;
+#N canvas 769 168 877 591 open_save-file 0;
 #X obj 172 16 inlet;
 #X obj 417 209 prepend label;
 #X obj 417 230 s \$0-PreManager-presetName;
 #X text 72 237 file exists;
 #X obj 52 543 outlet OPEN --- SAVE;
 #X obj 428 424 print -n;
-#X obj 245 260 bang;
-#X obj 217 127 cyclone/sprintf %s/%s;
-#X obj 217 151 prepend symbol;
+#X obj 341 248 bang;
+#X obj 225 132 cyclone/sprintf %s/%s;
+#X obj 225 156 prepend symbol;
 #X obj 172 69 t b b b;
 #X obj 52 306 bang;
 #X text 346 488 checks if file exists \; it creates it if it doesn't
@@ -144,9 +150,9 @@ exist \; it opens it if the file already exists;
 #X text 328 20 saves the file each time a new preset is recorded \,
 updating the file in disk;
 #X obj 172 231 hcs/stat;
-#X obj 217 106 tof/path;
-#X obj 70 358 prepend read;
-#X obj 70 337 makesymbol \$1-presets.txt;
+#X obj 225 111 tof/path;
+#X obj 61 365 prepend read;
+#X obj 61 344 makesymbol \$1-presets.txt;
 #X obj 417 104 makesymbol \$1-presets.txt;
 #X obj 428 401 list trim 1;
 #X obj 218 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -154,14 +160,16 @@ updating the file in disk;
 #X obj 172 40 del 100;
 #X obj 428 345 symbol -------------saving___\$1___PRESET_MANAGER------------
 ;
-#N canvas 0 50 450 300 write_file 0;
+#N canvas 1387 69 450 300 write_file 0;
 #X obj 120 113 tof/path;
 #X obj 120 139 cyclone/sprintf %s/%s;
 #X obj 120 86 t b b;
-#X obj 120 65 inlet;
-#X obj 120 182 outlet;
+#X obj 120 36 inlet;
+#X obj 120 248 outlet;
 #X obj 120 161 cyclone/prepend write;
-#X obj 176 114 makesymbol \$1-presets.txt;
+#X obj 264 114 makesymbol \$1-presets.txt;
+#X msg 17 101 store 0 empty;
+#X obj 17 34 inlet;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 0 0;
@@ -169,7 +177,9 @@ updating the file in disk;
 #X connect 3 0 2 0;
 #X connect 5 0 4 0;
 #X connect 6 0 1 1;
-#X restore 245 476 pd write_file;
+#X connect 7 0 4 0;
+#X connect 8 0 7 0;
+#X restore 253 467 pd write_file;
 #N canvas 0 50 450 300 read_file 0;
 #X obj 120 113 tof/path;
 #X obj 120 139 cyclone/sprintf %s/%s;
@@ -186,9 +196,12 @@ updating the file in disk;
 #X connect 5 0 4 0;
 #X connect 6 0 1 1;
 #X restore 52 478 pd read_file;
+#X obj 253 358 t b b;
+#X obj 436 290 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 21 0;
 #X connect 1 0 2 0;
-#X connect 6 0 23 0;
+#X connect 6 0 23 1;
 #X connect 7 0 8 0;
 #X connect 8 0 14 1;
 #X connect 9 0 14 0;
@@ -199,6 +212,7 @@ updating the file in disk;
 #X connect 12 0 6 0;
 #X connect 14 0 10 0;
 #X connect 14 1 6 0;
+#X connect 14 1 25 0;
 #X connect 15 0 7 0;
 #X connect 17 0 16 0;
 #X connect 18 0 7 1;
@@ -209,14 +223,17 @@ updating the file in disk;
 #X connect 22 0 19 0;
 #X connect 23 0 4 0;
 #X connect 24 0 4 0;
-#X restore 85 333 pd open_save-file;
-#X obj 258 418 cyclone/prepend;
-#X obj 258 308 r to_Master_preset;
-#X msg 258 353 add2 \$1;
-#X obj 258 331 cyclone/tosymbol;
-#N canvas 67 118 743 679 empty_message 0;
+#X connect 25 0 23 0;
+#X connect 25 1 23 1;
+#X connect 26 0 22 0;
+#X restore 78 333 pd open_save-file;
+#X obj 250 431 cyclone/prepend;
+#X obj 251 308 r to_Master_preset;
+#X msg 251 353 add2 \$1;
+#X obj 251 331 cyclone/tosymbol;
+#N canvas 67 118 743 712 empty_message 0;
 #X obj 89 15 inlet;
-#X obj 68 622 outlet;
+#X obj 68 657 outlet;
 #X obj 326 435 list length;
 #X obj 68 602 list;
 #X obj 326 519 sel;
@@ -224,8 +241,22 @@ updating the file in disk;
 #X obj 398 477 i;
 #X obj 326 460 t a b;
 #X obj 89 36 t b a;
-#X msg 285 68 set;
-#X msg 89 114;
+#X msg 285 72 set;
+#X msg 89 114 hsl-del_2--1 0 hsl-del_1--1 19 tgl-DSP-tdelay--0 1 knb-feedback-tdel--0 26.0145
+vsl-TDEL-sendfader--0 0 vsl-TDEL-volfader--0 69 vsl-FBNK-sendfader--0 0
+vsl-FBNK-volfader--0 115.019 vsl-GEST-sendfader--0 0 vsl-GEST-volfader--0 43.1321
+vsl-RVRB-sendfader--0 0 vsl-RVRB-volfader--0 6.38994 vsl-GRNS-sendfader--0 0
+vsl-GRNS-volfader--0 32.7484 hsl-fbnk--2 0 tgl-DSP-DSP--0 1 hsl-fbnk--1 102
+nbx-instnum--1 0 tgl-DSP-LFO/on--0 1 nbx-instnum--7 0 nbx-instnum--6 0
+nbx-instnum--5 5 nbx-instnum--4 5 nbx-instnum--3 4 nbx-instnum--2 4
+tgl-rev-frz--1 0 tgl-DSP-DSP-verb--0 1 knb-rsize--0 127 hrd-gest-regstr--0 2
+tgl-DSP-fire-gest--0 1 tgl-DSP-rec-gest--0 0 tgl-DSP-DSP-gest--0 1
+vsl-rnd-p-bot--0 37 tgl-gest-p-ON--0 0 tgl-gest-rm-ON--0 0 vsl-rnd-p-range--0 54
+vsl-HARP-sendfader--0 0 vsl-HARP-volfader--0 44.7296 vsl-fbk--0 12
+vsl-rdlt--0 26 vsl-dlt--0 11 vsl-rskw--0 9 vsl-skw--0 0 vsl-rshp--0 3
+vsl-shp--0 9 vsl-riot--0 32 vsl-iot--0 0 vsl-rdur--0 0 vsl-dur--0 41
+vsl-rtrn--0 0 vsl-trn--0 126 vsl-rpan--0 74 vsl-pan--0 63 vsl-ramp--0 86
+tgl-DSP-dsp--0 1 nbx-0--0 24 vsl-amp--0 121 msc-matrix--1 10;
 #X obj 285 557 t b b;
 #X obj 285 45 loadbang;
 #X floatatom 420 515 5 0 0 0 - - -, f 5;
@@ -238,10 +269,18 @@ updating the file in disk;
 a single complete message with all o them only when all the values
 of the GUI's are collected. This list is saved into the COLL object
 ;
+#X obj 68 632 spigot 1;
+#X obj 191 632 spigot 0;
+#X obj 217 589 r debug;
+#X obj 293 611 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 193 659 print DEBUGGING *************************************************************************************
+;
 #X connect 0 0 8 0;
 #X connect 2 0 7 0;
 #X connect 2 0 14 0;
-#X connect 3 0 1 0;
+#X connect 3 0 20 0;
+#X connect 3 0 21 0;
 #X connect 4 0 11 0;
 #X connect 5 0 17 0;
 #X connect 6 0 4 1;
@@ -261,8 +300,13 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 15 0 9 0;
 #X connect 17 1 6 1;
 #X connect 17 2 14 1;
-#X restore 258 373 pd empty_message;
-#X obj 382 265 s SaveMaster;
+#X connect 20 0 1 0;
+#X connect 21 0 24 0;
+#X connect 22 0 20 1;
+#X connect 22 0 21 1;
+#X connect 23 0 24 0;
+#X restore 251 373 pd empty_message;
+#X obj 375 265 s SaveMaster;
 #N canvas 94 174 450 300 count_items 0;
 #X obj 108 46 r preAbsCount;
 #X obj 108 71 bang;
@@ -295,7 +339,7 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 13 0 12 0;
 #X connect 13 1 4 0;
 #X connect 13 2 11 0;
-#X restore 401 241 pd count_items;
+#X restore 394 241 pd count_items;
 #N canvas 81 232 552 423 current_preset_label 0;
 #X obj 129 212 spigot;
 #X obj 129 139 t a a;
@@ -311,7 +355,7 @@ of the GUI's are collected. This list is saved into the COLL object
 #X obj 190 23 inlet;
 #X msg 209 227 NO_PRESET;
 #X obj 129 86 i;
-#X obj 171 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 171 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 162 160 ==;
 #X obj 129 41 t b f;
@@ -339,8 +383,8 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 16 1 13 1;
 #X connect 17 0 13 0;
 #X connect 17 1 15 1;
-#X restore 399 537 pd current_preset_label;
-#X obj 354 616 s CallBack-Master;
+#X restore 374 531 pd current_preset_label;
+#X obj 329 616 s CallBack-Master;
 #N canvas 50 312 470 341 drip_pairs 0;
 #X obj 94 18 inlet;
 #X obj 94 281 outlet;
@@ -413,64 +457,135 @@ of the GUI's are collected. This list is saved into the COLL object
 #X connect 8 0 1 0;
 #X connect 9 0 7 0;
 #X connect 10 0 9 0;
-#X restore 354 564 pd drip_pairs;
-#X obj 258 397 route list;
-#X obj 515 279 t f f b;
-#X msg 83 471 open;
-#X msg 428 301 store \$1;
-#X obj 382 199 t b b a;
-#X text 59 70 needs only one argument that will use to create the .txt
+#X restore 329 564 pd drip_pairs;
+#X obj 250 412 route list;
+#X msg 82 468 open;
+#X msg 414 339 store \$1;
+#X obj 375 199 t b b a;
+#X text 57 72 needs only one argument that will use to create the .txt
 file which will store all the presets \; \; the name of the file can't
 be "0.txt" so the argument cannot be "0".;
 #X obj 870 129 declare -stdlib iemlib/iemlib2;
 #X obj 870 109 declare -stdlib iemlib/iemlib1;
 #X obj 870 89 declare -stdlib zexy;
-#X obj 354 508 cyclone/coll \$1-presets;
-#C restore;
-#X msg 606 491 flags 0 0;
+#X obj 78 311 initbang;
+#X obj 588 423 initbang;
+#X msg 588 491 flags 0 0;
 #X text 755 594 www.jrsv.net;
 #X text 714 581 released under GPL license;
 #X text 728 609 Edinburgh - Scotland;
 #X text 714 566 (c) J.Rafael Subia V. 2016;
-#X obj 886 154 declare -stdlib iemguts;
-#X obj 455 423 iemguts/savebangs 1;
-#X msg 455 448 writeagain;
-#X obj 444 582 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 870 148 declare -stdlib iemguts;
+#X obj 430 435 iemguts/savebangs 1;
+#X msg 430 475 writeagain;
+#X obj 419 557 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 516 28 r current-patch-\$1;
 #X floatatom 540 59 5 0 0 0 - - -, f 5;
-#X obj 606 463 initbang;
-#X obj 85 311 initbang;
-#X connect 4 0 6 0;
+#X obj 516 279 t b f f b;
+#X msg 570 470 threaded 1;
+#X obj 329 508 cyclone/coll \$1-presets;
+#C restore;
+#X msg 122 464 sort -1 -1;
+#X obj 82 448 t b b;
+#X obj 578 312 s Patch-Change;
+#X obj 923 308 time, f 14;
+#X obj 802 309 date, f 17;
+#X obj 923 387 pack f f;
+#X obj 802 273 t b b;
+#X obj 802 493 pr.pnd write;
+#X obj 802 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 802 418 list append;
+#X obj 802 511 coll \$1-presets;
+#C restore;
+#X obj 802 456 pr.pnd symbol;
+#X obj 802 474 makefilename \$1-%s.backup;
+#X obj 802 381 pack f f f;
+#X msg 802 437 BckUp_\$1-\$2-\$3_\$4-\$5;
+#X obj 176 172 tgl 15 0 debug empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 250 393 spigot 1;
+#X obj 262 210 sel 0 1;
+#X obj 262 229 1;
+#X obj 290 229 0;
+#X obj 262 174 loadbang;
+#X msg 262 192 0;
+#X obj 139 546 bang;
+#X obj 139 568 print Preset-Recorded;
+#X obj 539 588 openpanel;
+#X obj 539 565 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 539 611 open \$1 \, sort -1 -1;
+#X obj 866 222 send stop-preset-GUI;
+#X obj 866 191 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 533 243 send pedal-number-tessellations;
 #X connect 6 0 3 0;
-#X connect 7 0 26 0;
-#X connect 8 0 23 0;
-#X connect 10 0 24 0;
-#X connect 11 0 31 0;
-#X connect 12 0 31 0;
+#X connect 7 0 25 0;
+#X connect 8 0 43 0;
+#X connect 8 0 75 0;
+#X connect 10 0 47 0;
+#X connect 11 0 45 0;
+#X connect 12 0 45 0;
 #X connect 13 0 15 0;
 #X connect 14 0 16 0;
 #X connect 15 0 14 0;
-#X connect 16 0 22 0;
+#X connect 16 0 62 0;
 #X connect 21 0 20 0;
 #X connect 22 0 12 0;
-#X connect 23 0 31 0;
-#X connect 23 1 19 1;
-#X connect 23 2 2 0;
-#X connect 24 0 31 0;
-#X connect 25 0 12 1;
-#X connect 26 0 17 0;
-#X connect 26 0 11 1;
-#X connect 26 1 18 0;
-#X connect 26 2 25 0;
-#X connect 31 0 21 0;
-#X connect 31 1 19 0;
-#X connect 31 2 40 0;
-#X connect 32 0 31 0;
+#X connect 23 0 45 0;
+#X connect 24 0 12 1;
+#X connect 25 0 17 0;
+#X connect 25 0 11 1;
+#X connect 25 1 18 0;
+#X connect 25 2 24 0;
+#X connect 30 0 11 0;
+#X connect 31 0 32 0;
+#X connect 31 0 44 0;
+#X connect 32 0 45 0;
 #X connect 38 0 39 0;
-#X connect 39 0 31 0;
+#X connect 39 0 45 0;
 #X connect 41 0 8 0;
 #X connect 41 0 42 0;
-#X connect 43 0 32 0;
-#X connect 44 0 11 0;
+#X connect 43 0 6 0;
+#X connect 43 1 45 0;
+#X connect 43 2 19 1;
+#X connect 43 3 48 0;
+#X connect 44 0 45 0;
+#X connect 45 0 21 0;
+#X connect 45 1 19 0;
+#X connect 45 2 40 0;
+#X connect 46 0 45 0;
+#X connect 47 0 23 0;
+#X connect 47 1 46 0;
+#X connect 49 0 51 0;
+#X connect 49 1 51 1;
+#X connect 50 0 59 0;
+#X connect 50 1 59 1;
+#X connect 50 2 59 2;
+#X connect 51 0 55 1;
+#X connect 52 0 50 0;
+#X connect 52 1 49 0;
+#X connect 53 0 56 0;
+#X connect 54 0 52 0;
+#X connect 55 0 60 0;
+#X connect 57 0 58 0;
+#X connect 58 0 53 0;
+#X connect 59 0 55 0;
+#X connect 60 0 57 0;
+#X connect 61 0 63 0;
+#X connect 62 0 22 0;
+#X connect 62 0 68 0;
+#X connect 63 0 64 0;
+#X connect 63 1 65 0;
+#X connect 64 0 62 1;
+#X connect 65 0 62 1;
+#X connect 66 0 67 0;
+#X connect 67 0 63 0;
+#X connect 68 0 69 0;
+#X connect 70 0 72 0;
+#X connect 71 0 70 0;
+#X connect 72 0 45 0;
+#X connect 74 0 73 0;
 #X coords 0 -1 1 1 250 85 2 500 100;

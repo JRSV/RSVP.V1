@@ -1,9 +1,7 @@
-# RSVP [Répondez S’il Vous Plaît - (R)afael (S)ubía (V)aldez (P)resets] 
+# JRSV_Presets
 State Saving System for Pure Data
 
-RSVP is a state saving system for Pure  Data (http://puredata.info/). It was created to offer Pure Data users a way to record presets for the GUI objects inside patches.
-
-RSVP stands for two things Répondez S’il Vous Plaît and my initials Rafael Subía Valdez Presets. The concept of RSVP in an invitation is to confirm assistance to an event, so this translated to the preset system is that that space and time is reserved for a certain value, it is "reserved".
+JRSV_presets is a state saving system for Pure  Data (http://puredata.info/). It was created to offer Pure Data users a way to record presets for the GUI objects inside patches.
 
 ## Getting Started
 
@@ -27,7 +25,7 @@ for more information and video tutorials from YOUTUBE please visit:
 
 ### Prerequisities
 
-RSVP depends on the following libraries available through the "DEKEN" package manager inside PD (comes with vanilla 0.47-1 or can be installed separetly). Make sure to download and install each package .  Set the path to the libraries in PD preferences and if necessary load/declare the libraries
+JRSV_presets depends on the following libraries available through the "DEKEN" package manager inside PD (comes with vanilla 0.47-1 or can be installed separetly). Make sure to download and install each package .  Set the path to the libraries in PD preferences and if necessary load/declare the libraries
 
   - HCS
   - iemguts
@@ -43,11 +41,11 @@ José Rafael Subía Valdez (www.jrsv.net)
 
 ### License
 
-This Project is released under GPL version 3 license agreement. More details available in the readme file
+This Project is released under GPL version 3 license agreement. More details available in the https://raw.githubusercontent.com/JRSV/JRSV_Presets-0.1/master/LICENSE.txt file
 
 ### Acknowledgments
 
-I would like to thank all the PD community that activily participate in the different gathering points of information (LIST and FACEBOOK) specially to the following  people that helped me with ideas and solutions to the problems:
+I would like too thank all the PD community that activily participate in the different gathering points of information (LIST and FACEBOOK) specially to the following  people that helped me with ideas and solutions to the problems:
 
    - Matt Barber
    - Liam Goodacre

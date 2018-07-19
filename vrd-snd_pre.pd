@@ -62,8 +62,8 @@
 #X obj 420 318 loadbang;
 #X obj 407 296 r update_abs_count;
 #X obj 83 307 pipe 10;
-#X obj 81 351 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -191407 -1
--1 0;
+#X obj 80 350 vradio 15 1 0 4 empty empty empty 0 -8 0 10 -86277 -4032
+-1 4;
 #X obj 317 454 declare -lib cyclone;
 #X obj 317 415 declare -stdlib zexy/zexy;
 #X obj 317 473 declare -lib iemguts;
@@ -111,4 +111,4 @@
 #X connect 32 1 29 0;
 #X connect 32 2 30 0;
 #X connect 32 3 12 0;
-#X coords 0 -1 1 1 17 122 2 80 350;
+#X coords 0 -1 1 1 15 60 2 80 350;

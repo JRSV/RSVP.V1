@@ -1,55 +1,55 @@
-#N canvas 368 59 569 639 10;
+#N canvas 451 147 569 639 10;
 #X declare -lib zexy;
 #X declare -lib cyclone;
 #X declare -lib iemguts;
 #X declare -lib hcs;
 #X declare -lib iemlib;
-#X obj -1 -1 cnv 15 552 40 empty empty GUI-creator 3 12 0 18 -204280
+#X obj 8 0 cnv 15 552 40 empty empty GUI-creator 3 12 0 18 -204280
 -1 0;
-#X text 11 22 creates common used GUIs with state saving capabilities
+#X text 20 23 creates common used GUIs with state saving capabilities
 ;
-#X obj 6 52 GUI-creator;
-#X obj 0 552 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
+#X obj 15 53 GUI-creator;
+#X obj 9 553 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
 0;
-#X text 108 570 A unique ID to allow persistency across abstractions.
+#X text 117 571 A unique ID to allow persistency across abstractions.
 ;
-#X text 333 83 <- click to create a GUI of your liking, f 26;
-#X obj 28 279 cnv 15 250 150 empty empty Area_of_Creation 5 8 0 14
+#X text 342 84 <- click to create a GUI of your liking, f 26;
+#X obj 37 280 cnv 15 250 150 empty empty Area_of_Creation 5 8 0 14
 -233017 -66577 0;
-#X text 110 118 This abstraction creates all common GUI objects with
+#X text 119 119 This abstraction creates all common GUI objects with
 state saving possibilities. The unique ID for the argument can be numerical
 or alphabetical. If none used \, the GUI-creator works but if an abstraction
 also lacking a unique ID is called \, then preset objects will receive
 the same messages \, making modularity difficult, f 71;
-#X text 302 264 you can erease the txt files created \, but make sure
+#X text 311 265 you can erease the txt files created \, but make sure
 to erease the previous GUIs created as this will produce duplication.
 , f 39;
-#X obj 0 600 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+#X obj 9 601 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
-#N canvas 307 431 428 109 Related_objects 0;
+#N canvas 270 431 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X restore 207 602 pd Related_objects;
-#X text 302 333 It is better to use one [GUI-creator] per module. All
+#X restore 216 603 pd Related_objects;
+#X text 311 334 It is better to use one [GUI-creator] per module. All
 GUIs will be saved with the preset manager. Rememeber to copy the text
 files created if you will continue to patch in a different path.,
 f 39;
-#X text 107 500 place the library in the folder of your project \,
+#X text 116 501 place the library in the folder of your project \,
 as it will create unique files;
-#X obj -1 473 cnv 3 550 3 empty empty INSTALLATION 8 12 0 13 -228856
+#X obj 8 474 cnv 3 550 3 empty empty INSTALLATION 8 12 0 13 -228856
 -1 0;
-#N canvas 0 50 450 300 dependencies 0;
+#N canvas 57 87 450 300 dependencies 0;
 #X obj 106 74 declare -lib zexy;
 #X obj 106 94 declare -lib cyclone;
 #X obj 106 114 declare -lib iemguts;
 #X obj 106 134 declare -lib hcs;
 #X obj 106 154 declare -lib iemlib;
-#X restore 324 522 pd dependencies;
-#X text 343 59 [GUI-creator <uniqueID>];
-#X text 110 201 When called for the first time \, GUI-creator will
+#X restore 333 523 pd dependencies;
+#X text 352 60 [GUI-creator <uniqueID>];
+#X text 119 202 When called for the first time \, GUI-creator will
 produce a "tgl-\$1-amount.txt: can't open" and "tgl-\$1-amount.txt:
 read failed" 14 times. The [GUI-creator] will write the necessary file
 in the same path were the patch is. If you want to reset the count
 , f 71;
-#X text 302 422 You can erease the module after your patching is finished
+#X text 311 423 You can erease the module after your patching is finished
 , f 39;
